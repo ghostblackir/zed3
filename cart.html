@@ -1,0 +1,88 @@
+<!-- صفحه سبد خرید (cart.html) -->
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبد خرید - ZED</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/st2.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <h1>سبد خرید ZED</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="about.html">درباره ما</a></li>
+                <li><a href="contact.html">تماس با ما</a></li>
+                <li><a href="cart.html">سبد خرید</a></li>
+            </ul>
+            <!-- دکمه عضویت -->
+            <a href="login.html" class="signup-button">
+                عضویت / ورود
+            </a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>محصولات داخل سبد خرید</h2>
+        <div id="cart-items">
+            <!-- اینجا لیست محصولات نمایش داده می‌شود -->
+        </div>
+        <a href="checkout.html"><button>ادامه به خرید</button></a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 فروشگاه ZED - تمام حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // نمایش لیست محصولات در سبد خرید
+        function displayCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItemsContainer.innerHTML = ""; // پاکسازی محتوای قبلی
+
+            if(cartItems.length > 0) {
+                cartItems.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    
+                    // ایجاد متن محصول
+                    const itemText = document.createElement('span');
+                    itemText.textContent = item.name;
+                    itemElement.appendChild(itemText);
+
+                    // ایجاد دکمه حذف
+                    const removeButton = document.createElement('span');
+                    removeButton.textContent = '×';  // علامت ضربدر
+                    removeButton.classList.add('remove-btn');
+                    removeButton.onclick = function() {
+                        removeFromCart(index);
+                    };
+                    itemElement.appendChild(removeButton);
+
+                    cartItemsContainer.appendChild(itemElement);
+                });
+            } else {
+                cartItemsContainer.textContent = 'سبد خرید شما خالی است.';
+            }
+        }
+
+        // تابع حذف محصول از سبد خرید
+        function removeFromCart(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            displayCart();
+        }
+
+        // وقتی صفحه بارگذاری شد، لیست محصولات را نمایش بده
+        document.addEventListener("DOMContentLoaded", displayCart);
+    </script>
+</body>
+</html>

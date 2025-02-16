@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات - ZED</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/st2.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>محصولات ZED</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="about.html">درباره ما</a></li>
+                <li><a href="contact.html">تماس با ما</a></li>
+                <li><a href="cart.html">سبد خرید (<span id="cart-count">0</span>)</a></li> <!-- نمایش تعداد سبد خرید -->
+            </ul>
+            <a href="login.html" class="signup-button">عضویت / ورود</a>
+        </nav>
+    </header>
+
+    <section class="product-list">
+        <h2 class="product-title">محصولات ما</h2>
+
+        <div class="product-container">
+            <!-- محصول 1 -->
+            <div class="product-card">
+                <img src="img/1.jpg" alt="محصول 1">
+                <h3>محصول 1</h3>
+                <p>توضیحات محصول 1</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 1', 1)">خرید</button>
+            </div>
+            <!-- محصول 2 -->
+            <div class="product-card">
+                <img src="img/2.jpg" alt="محصول 2">
+                <h3>محصول 2</h3>
+                <p>توضیحات محصول 2</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 2', 2)">خرید</button>
+            </div>
+            <!-- محصول 3 -->
+            <div class="product-card">
+                <img src="img/3.jpg" alt="محصول 3">
+                <h3>محصول 3</h3>
+                <p>توضیحات محصول 3</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 3', 3)">خرید</button>
+            </div>
+            <!-- محصول 4 -->
+            <div class="product-card">
+                <img src="img/4.jpg" alt="محصول 4">
+                <h3>محصول 4</h3>
+                <p>توضیحات محصول 4</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 4', 4)">خرید</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <!-- محصول 5 -->
+            <div class="product-card">
+                <img src="img/5.jpg" alt="محصول 5">
+                <h3>محصول 5</h3>
+                <p>توضیحات محصول 5</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 5', 5)">خرید</button>
+            </div>
+            <!-- محصول 6 -->
+            <div class="product-card">
+                <img src="img/6.jpg" alt="محصول 6">
+                <h3>محصول 6</h3>
+                <p>توضیحات محصول 6</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 6', 6)">خرید</button>
+            </div>
+            <!-- محصول 7 -->
+            <div class="product-card">
+                <img src="img/7.jpg" alt="محصول 7">
+                <h3>محصول 7</h3>
+                <p>توضیحات محصول 7</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 7', 7)">خرید</button>
+            </div>
+            <!-- محصول 8 -->
+            <div class="product-card">
+                <img src="img/8.jpg" alt="محصول 8">
+                <h3>محصول 8</h3>
+                <p>توضیحات محصول 8</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 8', 8)">خرید</button>
+            </div>
+        </div>
+
+        <div class="product-container">
+            <!-- محصول 9 -->
+            <div class="product-card">
+                <img src="img/9.jpg" alt="محصول 9">
+                <h3>محصول 9</h3>
+                <p>توضیحات محصول 9</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 9', 9)">خرید</button>
+            </div>
+            <!-- محصول 10 -->
+            <div class="product-card">
+                <img src="img/10.jpg" alt="محصول 10">
+                <h3>محصول 10</h3>
+                <p>توضیحات محصول 10</p>
+                <p class="price">قیمت: 1,000,000 تومان</p>
+                <button onclick="addToCart('محصول 10', 10)">خرید</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 فروشگاه ZED - تمام حقوق محفوظ است.</p>
+    </footer>
+    
+    <script>
+        // بارگذاری تعداد سبد خرید از localStorage هنگام بارگذاری صفحه
+        window.onload = function() {
+            updateCartCount();
+        };
+
+        // افزودن محصول به سبد خرید
+        function addToCart(productName, productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || []; // گرفتن سبد خرید از localStorage
+
+            // بررسی وجود محصول در سبد خرید
+            let productExists = cart.find(item => item.id === productId);
+
+            if (productExists) {
+                productExists.quantity += 1; // اگر محصول موجود بود تعداد آن را افزایش می‌دهیم
+            } else {
+                cart.push({ id: productId, name: productName, quantity: 1 }); // اگر نبود، آن را اضافه می‌کنیم
+            }
+
+            // ذخیره‌سازی سبد خرید در localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // به روز رسانی تعداد سبد خرید در نوار ناوبری
+            updateCartCount();
+
+            alert(`${productName} به سبد خرید شما اضافه شد!`);
+        }
+
+        // به روز رسانی تعداد محصولات در سبد خرید
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartCount = cart.reduce((total, item) => total + item.quantity, 0); // تعداد کل محصولات
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+    </script>
+</body>
+</html>

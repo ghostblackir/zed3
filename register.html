@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام - ZED</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- اضافه کردن استایل‌های قبلی -->
+    <link rel="stylesheet" href="css/st2.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    <style>
+        /* استایل‌های صفحه ثبت نام */
+        .register-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 175, 255, 0.3);
+            color: #00AFFF;
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #00AFFF;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #00AFFF;
+            background-color: #333;
+            color: #00AFFF;
+        }
+
+        .register-container input:focus {
+            outline: none;
+            border-color: #00AFFF;
+            background-color: #222;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00AFFF;
+            border: none;
+            border-radius: 5px;
+            color: #121212;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .register-container button:hover {
+            background-color: #0099cc;
+        }
+
+        .register-container .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #00AFFF;
+        }
+
+        .register-container .signup-link a {
+            text-decoration: none;
+            color: #00AFFF;
+            font-weight: bold;
+        }
+
+        .register-container .signup-link a:hover {
+            color: #0099cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+            color: #00AFFF;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- دکمه عضویت -->
+    <a href="login.html" class="signup-button">
+        <button type="button">ورود</button>
+    </a>
+
+    <!-- صفحه ثبت نام -->
+    <div class="register-container">
+        <h2>ثبت نام</h2>
+        <form action="submit_registration.php" method="POST">
+            <label for="username">نام کاربری:</label>
+            <input type="text" id="username" name="username" placeholder="نام کاربری خود را وارد کنید" required>
+
+            <label for="email">ایمیل:</label>
+            <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید" required>
+
+            <label for="password">گذرواژه:</label>
+            <input type="password" id="password" name="password" placeholder="گذرواژه خود را وارد کنید" required>
+
+            <label for="confirm-password">تایید گذرواژه:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="گذرواژه را تایید کنید" required>
+
+            <button type="submit">ثبت نام</button>
+        </form>
+
+        <div class="signup-link">
+            <p>قبلاً ثبت نام کرده‌اید؟ <a href="login.html">وارد شوید</a></p>
+        </div>
+    </div>
+
+    <!-- فوتر -->
+    <footer>
+        <p>&copy; 2025 فروشگاه ZED - تمام حقوق محفوظ است.</p>
+    </footer>
+
+</body>
+</html>

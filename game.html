@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی تایپ سرعتی</title>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="game-container">
+        <h1>بازی تایپ سرعتی</h1>
+        <p id="text-to-type" oncopy="return false" onselectstart="return false">در حال بارگذاری متن...</p>
+        <textarea id="user-input" placeholder="اینجا تایپ کن..." autofocus></textarea>
+        <p id="timer">⏳ زمان: <span id="time">0</span> ثانیه</p>
+        <button id="restart">شروع دوباره</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>

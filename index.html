@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه ZED</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/st2.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>فروشگاه ZED</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="about.html">درباره ما</a></li>
+                <li><a href="contact.html">تماس با ما</a></li>
+                <li><a href="cart.html">سبد خرید</a></li>
+            </ul>
+            <!-- دکمه عضویت -->
+            <a href="login.html" class="signup-button">
+                عضویت / ورود
+            </a>
+            <!-- دکمه بازی -->
+            <a href="game.html" class="game-button">
+                بازی
+            </a>
+            <div class="wallet-container">
+                <span>🪙 سکه‌ها: <span id="wallet-coins">1000</span></span> <!-- سکه‌های موجود -->
+            </div>
+        </nav>
+    </header>
+
+    <section class="product-section">
+        <h2>محصولات ویژه</h2>
+        <div class="product-slider">
+            <!-- محصول 1 -->
+            <div class="product-card">
+                <img src="img/1.jpg" alt="محصول 1">
+                <h3>محصول 1</h3>
+                <p>توضیحات محصول 1</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 1', 1000)">خرید با سکه</button> <!-- دکمه خرید سکه -->
+            </div>
+            
+            <!-- محصول 2 -->
+            <div class="product-card">
+                <img src="img/2.jpg" alt="محصول 2">
+                <h3>محصول 2</h3>
+                <p>توضیحات محصول 2</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 2', 1000)">خرید با سکه</button>
+            </div>
+            
+            <!-- محصول 3 -->
+            <div class="product-card">
+                <img src="img/3.jpg" alt="محصول 3">
+                <h3>محصول 3</h3>
+                <p>توضیحات محصول 3</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 3', 1000)">خرید با سکه</button>
+            </div>
+            
+            <!-- محصول 4 -->
+            <div class="product-card">
+                <img src="img/4.jpg" alt="محصول 4">
+                <h3>محصول 4</h3>
+                <p>توضیحات محصول 4</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 4', 1000)">خرید با سکه</button>
+            </div>
+            
+            <!-- محصول 5 -->
+            <div class="product-card">
+                <img src="img/5.jpg" alt="محصول 5">
+                <h3>محصول 5</h3>
+                <p>توضیحات محصول 5</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 5', 1000)">خرید با سکه</button>
+            </div>
+            
+            <!-- محصول 6 -->
+            <div class="product-card">
+                <img src="img/6.jpg" alt="محصول 6">
+                <h3>محصول 6</h3>
+                <p>توضیحات محصول 6</p>
+                <p class="price">قیمت: 1000 سکه</p>
+                <button onclick="addToCart('محصول 6', 1000)">خرید با سکه</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 فروشگاه ZED - تمام حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        // بارگذاری سکه‌ها از localStorage هنگام بارگذاری صفحه
+        function updateCoins() {
+            let coins = localStorage.getItem('coins');
+            coins = coins ? parseInt(coins) : 0; // اگر سکه‌ها موجود نباشند، 0 در نظر می‌گیریم
+            document.getElementById('wallet-coins').textContent = coins;
+        }
+    
+        // افزودن به سبد خرید و کاهش سکه‌ها
+        function addToCart(productName, price) {
+            let coins = localStorage.getItem('coins');
+            coins = coins ? parseInt(coins) : 0; // اگر سکه‌ها موجود نباشند، 0 در نظر می‌گیریم
+    
+            if (coins >= price) {
+                coins -= price; // کم کردن سکه‌ها
+                // ذخیره‌سازی سکه‌های جدید در localStorage
+                localStorage.setItem('coins', coins);
+                updateCoins(); // به روز رسانی نمایش سکه‌ها
+                alert(`${productName} با موفقیت خریداری شد!`);
+            } else {
+                alert('موجودی سکه‌های شما کافی نیست!');
+            }
+        }
+    
+        // به روز رسانی موجودی سکه‌ها وقتی صفحه لود می‌شه
+        window.onload = updateCoins;
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درگاه پرداخت نمونه</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background-color: #fff;
+            width: 450px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .payment-header {
+            margin-bottom: 20px;
+        }
+        .payment-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .payment-header h2 {
+            color: #1e90ff;
+            font-size: 18px;
+            margin: 0;
+        }
+        .order-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+        .input-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .input-group label {
+            font-size: 14px;
+            color: #333;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #1e90ff;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4682b4;
+        }
+        .timer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        .payment-footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        .payment-footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container">
+        <div class="payment-header">
+            <img src="logo.png" alt="پرداخت امن" class="payment-logo">
+            <h2>درگاه پرداخت اینترنتی</h2>
+        </div>
+
+        <div class="order-info">
+            <h3>اطلاعات خرید</h3>
+            <p>نام محصول: <strong>خرید محصول X</strong></p>
+            <p>قیمت: <strong>۵۰۰,۰۰۰ تومان</strong></p>
+            <p>مجموع: <strong>۵۰۰,۰۰۰ تومان</strong></p>
+        </div>
+
+        <form action="payment_processor.php" method="POST" class="payment-form">
+            <div class="input-group">
+                <label for="card_number">شماره کارت</label>
+                <input type="text" id="card_number" name="card_number" placeholder="شماره کارت خود را وارد کنید" required>
+            </div>
+            <div class="input-group">
+                <label for="expiry_date">تاریخ انقضا</label>
+                <input type="text" id="expiry_date" name="expiry_date" placeholder="تاریخ انقضا (MM/YY)" required>
+            </div>
+            <div class="input-group">
+                <label for="cvv">کد CVV2</label>
+                <input type="text" id="cvv" name="cvv" placeholder="کد CVV2 را وارد کنید" required>
+            </div>
+            <div class="input-group">
+                <label for="amount">مبلغ پرداختی</label>
+                <input type="number" id="amount" name="amount" value="500000" readonly>
+            </div>
+            <div class="input-group">
+                <label for="email">ایمیل (اختیاری)</label>
+                <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید">
+            </div>
+
+            <div class="input-group">
+                <label for="otp">کد رمز پویا</label>
+                <input type="text" id="otp" name="otp" placeholder="کد رمز پویا را وارد کنید" required>
+                <button type="button" id="send-otp">ارسال کد</button>
+            </div>
+
+            <div class="input-group">
+                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+            </div>
+
+            <div class="input-group">
+                <button type="submit">پرداخت</button>
+            </div>
+        </form>
+
+        <div class="timer">
+            <p>زمان باقی‌مانده: <span id="countdown"></span></p>
+        </div>
+
+        <div class="payment-footer">
+            <p>تمامی حقوق محفوظ است.</p>
+        </div>
+    </div>
+
+    <script>
+        // تایمر شمارش معکوس
+        let timeLeft = 300; // 5 دقیقه زمان
+        const countdownElement = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            timeLeft--;
+
+            if (timeLeft < 0) {
+                alert('زمان پرداخت به پایان رسید');
+                window.location.reload();
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        
+        // ارسال کد رمز پویا (برای نمونه)
+        document.getElementById('send-otp').addEventListener('click', function() {
+            alert('کد رمز پویا به ایمیل شما ارسال شد!');
+        });
+    </script>
+
+</body>
+</html>

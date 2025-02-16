@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه ورود / ثبت‌نام</title>
+    <link rel="stylesheet" href="styles.css"> <!-- به استایل‌های اصلی لینک دهید -->
+    <link rel="stylesheet" href="css/st2.css">
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    
+    <style>
+        /* استایل برای صفحه ورود / ثبت‌نام */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #121212;
+            color: #00AFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .login-container {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 175, 255, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #00AFFF;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #333;
+            color: #00AFFF;
+            border: 1px solid #00AFFF;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login-container input:focus {
+            border-color: #0099cc;
+            background-color: #222;
+            outline: none;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00AFFF;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-container button:hover {
+            background-color: #0099cc;
+        }
+
+        .login-container .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .login-container .register-link a {
+            color: #00AFFF;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .login-container .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            color: #00AFFF;
+            font-size: 0.8rem;
+            margin-top: auto;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            background-color: #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>ورود / ثبت‌نام</h2>
+
+        <!-- فرم ورود -->
+        <form action="/login" method="POST">
+            <input type="text" id="username" name="username" placeholder="نام کاربری" required>
+            <input type="password" id="password" name="password" placeholder="رمز عبور" required>
+            <button type="submit">ورود</button>
+        </form>
+
+        <div class="register-link">
+            <p>حساب کاربری ندارید؟ <a href="register.html">اینجا ثبت‌نام کنید</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>2025 فروشگاه ZED - تمام حقوق محفوظ است.</p>
+    </footer>
+
+</body>
+</html>

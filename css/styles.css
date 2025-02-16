@@ -1,0 +1,710 @@
+/* Styles for the Hacker Theme */
+body {
+    background-color: #121212;
+    color: #00AFFF;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00AFFF;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #00AFFF;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00AFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.product-section {
+    margin: 20px;
+}
+
+.product-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 175, 255, 0.5);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: #00AFFF;
+}
+
+button {
+    background-color: #00AFFF;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0099cc;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #00AFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.product-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+/* Styles for the Hacker Theme */
+body {
+    background-color: #121212;  /* پس زمینه تیره */
+    color: #00AFFF;  /* رنگ متن آبی فیروزه‌ای */
+    font-family: 'Courier New', Courier, monospace;  /* فونت مونو اسپیس برای حالت هکری */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;  /* پس زمینه هدر مشکی */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00AFFF;  /* خط آبی رنگ پایین هدر */
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #00AFFF;  /* رنگ عنوان */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00AFFF;  /* رنگ لینک‌ها */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.product-section {
+    margin: 20px;
+}
+
+.product-slider {
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #333;  /* رنگ پس زمینه کارت‌های محصول */
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 175, 255, 0.5);  /* افکت سایه آبی */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: #00AFFF;  /* رنگ عنوان هر محصول */
+}
+
+button {
+    background-color: #00AFFF;  /* رنگ پس زمینه دکمه‌ها */
+    color: #121212;  /* رنگ متن دکمه */
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0099cc;  /* تغییر رنگ دکمه هنگام هاور */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;  /* پس زمینه فوتر */
+    color: #00AFFF;  /* رنگ متن فوتر */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;  /* سایز فونت کوچک برای کپی رایت */
+}
+/* Styles for the Hacker Theme */
+body {
+    background-color: #121212;
+    color: #00AFFF;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00AFFF;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #00AFFF;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00AFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.checkout-form {
+    margin: 20px;
+}
+
+.checkout-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 1em;
+    display: flex;
+    align-items: center;  /* تراز عمودی */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00AFFF;
+    background-color: #333;
+    color: #00AFFF;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00AFFF;
+    background-color: #222;
+}
+
+button {
+    background-color: #00AFFF;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0099cc;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #00AFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+
+/* مقررات سایت */
+.form-group label {
+    display: inline-flex; /* استفاده از inline-flex برای قرار گرفتن چک‌باکس و متن کنار هم */
+    align-items: center;
+}
+
+.form-group label input {
+    margin-right: 5px; /* فاصله کمتر بین چک‌باکس و متن */
+}
+/* Styles for the Hacker Theme */
+body {
+    background-color: #121212;
+    color: #00AFFF;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00AFFF;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #00AFFF;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00AFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.product-list {
+    margin: 20px;
+    padding-bottom: 60px; /* To prevent overlap with footer */
+}
+
+.product-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00AFFF;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    justify-items: center; /* Align items horizontally */
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 175, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: #00AFFF;
+}
+
+.product-card button {
+    background-color: #00AFFF;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #00AFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8em;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.remove-btn {
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.remove-btn:hover {
+    color: darkred;
+}
+.product-card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 175, 255, 0.5);
+    margin: 10px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    color: #00AFFF;
+}
+
+.product-card .price {
+    color: #f39c12;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #00AFFF;
+    color: #121212;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0099cc;
+}
+/* تنظیمات اولیه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #121212;  /* پس‌زمینه تیره */
+    color: #00AFFF;  /* رنگ متن آبی فیروزه‌ای */
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+/* هدر */
+header {
+    background-color: #000;  /* پس‌زمینه هدر مشکی */
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #00AFFF;  /* خط آبی رنگ پایین هدر */
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #00AFFF;
+}
+
+/* ناوبری */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00AFFF;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* فرم تماس */
+.contact-form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #333; /* پس‌زمینه فرم */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 175, 255, 0.5); /* سایه آبی */
+}
+
+.contact-form label {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #00AFFF;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #00AFFF;
+    background-color: #222;
+    color: #00AFFF;
+    border-radius: 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0099cc;
+}
+
+.contact-form button {
+    background-color: #00AFFF;
+    color: #121212;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0099cc;
+}
+
+/* دکمه تلگرام */
+a button {
+    padding: 12px 20px;
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+a button:hover {
+    background-color: #006a99;
+}
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #00AFFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}
+/* فرم ورود / ثبت‌نام */
+.login-form {
+    margin: 40px auto;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: #00FF00;
+}
+
+.login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    border-radius: 5px;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #00FF00;
+    background-color: #222;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00FF00;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #009900;
+}
+/* دکمه عضویت در گوشه بالا سمت چپ */
+.signup-button {
+    position: fixed;
+    top: 10px;  /* فاصله از بالای صفحه کاهش یافته */
+    left: 20px; /* فاصله از سمت چپ */
+    z-index: 9999; /* در بالای سایر عناصر */
+}
+
+.signup-button button {
+    background-color: #00AFFF; /* رنگ پس زمینه دکمه */
+    color: #121212; /* رنگ متن دکمه */
+    padding: 8px 16px; /* فاصله داخلی دکمه کاهش یافته */
+    border: none; /* بدون حاشیه */
+    border-radius: 5px; /* گوشه‌های گرد */
+    font-size: 0.9rem; /* اندازه فونت کوچکتر */
+    font-weight: bold; /* ضخیم بودن فونت */
+    cursor: pointer; /* نشانگر موس به حالت دست */
+}
+
+.signup-button button:hover {
+    background-color: #0099cc; /* تغییر رنگ دکمه هنگام هاور */
+}
+/* استایل دکمه بازی */
+.game-button button {
+    padding: 8px 16px;
+    background-color: #FF6347;
+    border: 2px solid #FF6347;
+    border-radius: 20px;
+    color: #121212;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.5);
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.game-button button:hover {
+    background-color: #FF4500;
+    border-color: #FF4500;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 99, 71, 0.7);
+}
+.wallet-container {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: gold;
+}
+.wallet-container {
+    position: absolute;
+    top: 10px;
+    right: 120px; /* فاصله بیشتر از دکمه بازی */
+    font-size: 18px;
+    font-weight: bold;
+    color: gold;
+    background: #222;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+    z-index: 1000;
+}
+
